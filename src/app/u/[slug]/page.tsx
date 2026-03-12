@@ -10,7 +10,7 @@ type Params = Promise<{ slug: string }>;
 
 export default function DigitalCard(props: { params: Params }) {
     const corporateLinks = [
-        { title: 'Company Website', icon: <Globe size={18} className="text-slate-500 group-hover:text-amber-500" />, url: '#' },
+        { title: 'Company Website', icon: <Globe size={18} className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1DeZXuc5U4/' },
         { title: 'WeGrow', icon: <Calendar size={18} className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1DeZXuc5U4/' },
         { title: 'WeTech', icon: <TrendingUp className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1HxKwZSuzV/' },
         { title: 'Awareness for Excellence', icon: <Atom className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1EEqNicLMs/' },
@@ -71,8 +71,8 @@ export default function DigitalCard(props: { params: Params }) {
                     </a>
 
                     <a href="https://www.linkedin.com/in/shwe-yee-win-767aaa160?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="__blank" className="col-span-2 bg-[#0077b5] p-4 rounded-xl flex items-center justify-between group transition-all">
-                        <div className="flex items-center gap-3 text-white">
-                            <i className="fab fa-linkedin-in text-xl"></i>
+                        <div className="flex items-center gap-5 text-white">
+                            <i className="fa-brands fa-linkedin text-[25px]" ></i>
                             <span className="font-bold">Professional Network</span>
                         </div>
                         <i className="fas fa-arrow-right text-white/50 group-hover:translate-x-1 transition-transform"></i>
