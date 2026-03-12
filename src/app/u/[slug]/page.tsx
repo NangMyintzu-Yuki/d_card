@@ -13,7 +13,7 @@ export default function DigitalCard(props: { params: Params }) {
         { title: 'Company Website', icon: <Globe size={18} className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1DeZXuc5U4/' },
         { title: 'WeGrow', icon: <Calendar size={18} className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1DeZXuc5U4/' },
         { title: 'WeTech', icon: <TrendingUp className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1HxKwZSuzV/' },
-        { title: 'Awareness for Excellence', icon: <Atom className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1EEqNicLMs/' },
+        { title: 'Awareness for Excellence - A4E', icon: <Atom className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1EEqNicLMs/' },
     ];
 
     const socialLinks = [
