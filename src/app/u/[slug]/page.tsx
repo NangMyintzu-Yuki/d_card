@@ -1,3 +1,4 @@
+"use client";
 import { downloadVCard } from "@/app/utils/vcard";
 
 export default function DigitalCard({ params }: { params: { slug: string } }) {
