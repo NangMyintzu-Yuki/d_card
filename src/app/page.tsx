@@ -6,21 +6,23 @@ export default function Home() {
   const [slug, setSlug] = useState("");
   const [qrSrc, setQrSrc] = useState("");
 
-  const generateQR = async () => {
-    if (!slug) return;
-    // URL format: domain/p/username
-    const url = `${window.location.origin}/u/${slug}`;
-    try {
-      const dataUrl = await QRCode.toDataURL(url, {
-        width: 300,
-        margin: 2,
-        color: { dark: "#000000", light: "#ffffff" }
-      });
-      setQrSrc(dataUrl);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+ const generateQR = async () => {
+  if (!slug) return;
+
+  // Use the Vercel URL if it exists, otherwise fallback to the current window origin
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || window.location.origin;
+  const url = `${baseUrl}/u/${slug}`;
+
+  try {
+    const dataUrl = await QRCode.toDataURL(url, {
+      width: 300,
+      margin: 2,
+    });
+    setQrSrc(dataUrl);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-white p-6">

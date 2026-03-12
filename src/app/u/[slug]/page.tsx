@@ -1,9 +1,15 @@
+import { downloadVCard } from "@/app/utils/vcard";
+
 export default function DigitalCard({ params }: { params: { slug: string } }) {
   const customer = {
     name: params.slug,
     title: "Project Manager",
     email: "contact@example.com",
     phone: "+1 234 567 890"
+  };
+
+  const handleSaveContact = () => {
+    downloadVCard(customer);
   };
 
   return (
@@ -17,8 +23,11 @@ export default function DigitalCard({ params }: { params: { slug: string } }) {
             <p className="text-blue-600 font-medium">{customer.title}</p>
           </div>
           <div className="mt-6 space-y-3">
-            <button className="w-full bg-gray-900 text-white py-2 rounded-lg font-semibold hover:bg-black transition">
-              Save Contact
+           <button 
+              onClick={handleSaveContact}
+              className="w-full bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-black transition active:scale-95 shadow-lg"
+            >
+              Add to Contacts
             </button>
             <div className="text-sm text-gray-600">
               <p>📧 {customer.email}</p>
