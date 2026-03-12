@@ -27,7 +27,7 @@ export default function DigitalCard(props: { params: Params }) {
     const params = React.use(props.params);
 
     const customer = {
-        name: "Shwe Ye Win",
+        name: "Shwe Yee Win",
         title: "Founder Of WeGrow Myanmar",
         email: "shweyeewin.wegrow@gmail.com",
         phone: "09974133003"
@@ -46,13 +46,13 @@ export default function DigitalCard(props: { params: Params }) {
                     <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
                     <div className="absolute -bottom-14 left-8">
                         <div className="w-28 h-28 rounded-2xl border-4 border-[#1e293b] overflow-hidden shadow-2xl bg-slate-700">
-                            <Image src={Profile} width={500} height={500} alt="Shwe Ye Win" className="w-full h-full object-cover" />
+                            <Image src={Profile} width={500} height={500} alt="Shwe Yee Win" className="w-full h-full object-cover" />
                         </div>
                     </div>
                 </div>
 
                 <div className="mt-16 px-8">
-                    <h1 className="text-2xl font-bold text-white tracking-tight">Shwe Ye Win</h1>
+                    <h1 className="text-2xl font-bold text-white tracking-tight">Shwe Yee Win</h1>
 
                     <div className="flex items-center gap-2 mt-2 text-amber-500">
                         <i className="fas fa-building text-xs"></i>
