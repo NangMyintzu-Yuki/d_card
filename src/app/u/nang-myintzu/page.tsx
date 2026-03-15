@@ -3,34 +3,34 @@ import { downloadVCard } from "@/app/utils/vcard";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Globe, Calendar, Briefcase, TrendingUp, Phone, Mail, Linkedin, ArrowRight, Facebook, LinkedinIcon, Atom } from "lucide-react";
-import Profile from '../../../../public/images/shweyewin.jpg'
+import { Globe, Calendar, Briefcase, TrendingUp, Phone, Mail, Linkedin, ArrowRight, Facebook, LinkedinIcon, Atom, Youtube } from "lucide-react";
+import Profile from '../../../../public/images/nangmyintzu.jpg'
 type Params = Promise<{ slug: string }>;
 
 
 export default function DigitalCard(props: { params: Params }) {
     const corporateLinks = [
-        { title: 'Company Website', icon: <Globe size={18} className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1DeZXuc5U4/' },
-        { title: 'WeGrow', icon: <Calendar size={18} className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1DeZXuc5U4/' },
-        { title: 'WeTech', icon: <TrendingUp className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1HxKwZSuzV/' },
-        { title: 'Awareness for Excellence - A4E', icon: <Atom className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1EEqNicLMs/' },
+        { title: 'Portfolio', icon: <Globe size={18} className="text-slate-500 group-hover:text-amber-500" />, url: 'https://nangmyintzu.vercel.app/' },
+        { title: 'Tiktok', icon: <Calendar size={18} className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.tiktok.com/@nmz6464?_r=1&_t=ZS-94i4kKHBpdU' },
+        // { title: 'WeTech', icon: <TrendingUp className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1HxKwZSuzV/' },
+        // { title: 'Awareness for Excellence - A4E', icon: <Atom className="text-slate-500 group-hover:text-amber-500" />, url: 'https://www.facebook.com/share/1AQscyqqiV/' },
     ];
 
     const socialLinks = [
-        { platform: "Viber", icon: <Briefcase />, url: "viber://add?number=09974133003" },
-        { platform: "Facebook", icon: <Facebook />, url: "https://www.facebook.com/share/1EEqNicLMs/" },
-        { platform: "Linkedin", icon: <LinkedinIcon />, url: "https://www.linkedin.com/in/shwe-yee-win-767aaa160" },
-        { platform: "Telegram", icon: '', url: "https://t.me/+959974133003" },
-        { platform: "WhatsApp", icon: <Mail />, url: "https://wa.me/959671496721" },
+        { platform: "Viber", icon: <Briefcase />, url: "viber://add?number=09259599508" },
+        { platform: "Facebook", icon: <Facebook />, url: "https://www.facebook.com/share/1AQscyqqiV/" },
+        { platform: "Linkedin", icon: <LinkedinIcon />, url: "https://www.linkedin.com/in/nangmyintzu/" },
+        { platform: "Telegram", icon: '', url: "https://t.me/+959259599508" },
+        { platform: "Youtube", icon: <Youtube />, url: "https://www.youtube.com/@nangmyintzu8203" },
     ];
     // Use React.use() to unwrap the params promise safely
     const params = React.use(props.params);
 
     const customer = {
-        name: "Shwe Yee Win",
-        title: "Founder Of WeGrow Myanmar",
-        email: "shweyeewin.wegrow@gmail.com",
-        phone: "09974133003"
+        name: "Nang Myintzu",
+        title: "Full Stack Developer",
+        email: "nangmyintzu89@gmail.com",
+        phone: "09259599508"
     };
 
     const handleSaveContact = () => {
@@ -46,31 +46,31 @@ export default function DigitalCard(props: { params: Params }) {
                     <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
                     <div className="absolute -bottom-14 left-8">
                         <div className="w-28 h-28 rounded-2xl border-4 border-[#1e293b] overflow-hidden shadow-2xl bg-slate-700">
-                            <Image src={Profile} width={500} height={500} alt="Shwe Yee Win" className="w-full h-full object-cover" />
+                            <Image src={Profile} width={500} height={500} alt="Nang Myintzu" className="w-full h-full object-cover" />
                         </div>
                     </div>
                 </div>
 
                 <div className="mt-16 px-8">
-                    <h1 className="text-2xl font-bold text-white tracking-tight">Shwe Yee Win</h1>
+                    <h1 className="text-2xl font-bold text-white tracking-tight">Nang Myintzu</h1>
 
                     <div className="flex items-center gap-2 mt-2 text-amber-500">
                         <i className="fas fa-building text-xs"></i>
-                        <span className="text-xs font-bold uppercase">WeGrow</span>
+                        <span className="text-xs font-bold uppercase">NMZ</span>
                     </div>
                 </div>
 
                 <div className="px-8 mt-8 grid grid-cols-2 gap-3">
-                    <a href="tel:09974133003" className="bg-slate-800/50 border border-slate-700 p-4 rounded-xl flex flex-col gap-2 hover:bg-slate-700/50 transition-all">
+                    <a href="tel:09259599508" className="bg-slate-800/50 border border-slate-700 p-4 rounded-xl flex flex-col gap-2 hover:bg-slate-700/50 transition-all">
                         <i className="fas fa-phone-alt text-amber-500"></i>
                         <span className="text-slate-300 text-xs font-semibold">Call Direct</span>
                     </a>
-                    <a href="mailto:shweyeewin.wegrow@gmail.com" className="bg-slate-800/50 border border-slate-700 p-4 rounded-xl flex flex-col gap-2 hover:bg-slate-700/50 transition-all">
+                    <a href="mailto:nangmyintzu89@gmail.com" className="bg-slate-800/50 border border-slate-700 p-4 rounded-xl flex flex-col gap-2 hover:bg-slate-700/50 transition-all">
                         <i className="fas fa-envelope text-amber-500"></i>
                         <span className="text-slate-300 text-xs font-semibold">Send Email</span>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/shwe-yee-win-767aaa160?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="__blank" className="col-span-2 bg-[#0077b5] p-4 rounded-xl flex items-center justify-between group transition-all">
+                    <a href="https://www.linkedin.com/in/nangmyintzu/" target="__blank" className="col-span-2 bg-[#0077b5] p-4 rounded-xl flex items-center justify-between group transition-all">
                         <div className="flex items-center gap-5 text-white">
                             <i className="fa-brands fa-linkedin text-[25px]" ></i>
                             <span className="font-bold">Professional Network</span>
