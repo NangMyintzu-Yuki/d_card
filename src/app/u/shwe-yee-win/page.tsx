@@ -18,7 +18,7 @@ export default function DigitalCard(props: { params: Params }) {
 
     const socialLinks = [
         { platform: "Viber", icon: <Briefcase />, url: "viber://add?number=09974133003" },
-        { platform: "Facebook", icon: <Facebook />, url: "https://www.facebook.com/share/1EEqNicLMs/" },
+        { platform: "Facebook", icon: <Facebook />, url: "https://www.facebook.com/share/1KSC1gD3Wd/" },
         { platform: "Linkedin", icon: <LinkedinIcon />, url: "https://www.linkedin.com/in/shwe-yee-win-767aaa160" },
         { platform: "Telegram", icon: '', url: "https://t.me/+959974133003" },
         { platform: "WhatsApp", icon: <Mail />, url: "https://wa.me/959671496721" },

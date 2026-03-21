@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   title: "Digital Card",
   description: "Scan to save my contact info",
   icons: {
-    icon: "/logo.png", 
-    apple: "/logo.png", 
+    icon: "/logo.jpg", 
+    apple: "/logo.jpg", 
   },
 };
 
