@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { Globe, Calendar, Briefcase, TrendingUp, Phone, Mail, Linkedin, ArrowRight, Facebook, LinkedinIcon, Atom, Youtube } from "lucide-react";
 import Profile from '../../../../public/images/nangmyintzu.jpg'
+import FloatingContact from "@/components/FloatingContact";
 type Params = Promise<{ slug: string }>;
 
 
