@@ -13,7 +13,7 @@ export default function DigitalCard(props: { params: Params }) {
         { platform: 'Viber', color: 'text-indigo-400', label: 'Viber', url: "viber://add?number=09979052919" },
         // instagram: { color: 'text-red-400', label: 'Instagram' },
         // tiktok: {  color: 'text-black', label: 'TikTok' },
-        { platform: 'Telegram', color: 'text-blue-400', label: 'Telegram', url: "@zweaung_nova_edu" },
+        { platform: 'Telegram', color: 'text-blue-400', label: 'Telegram', url: "https://t.me/zweaung_nova_edu" },
     ];
     // const PLATFORM_CONFIG: Record<string, {  color: string, label: string, url:string }> = {
     //     facebook: {  color: 'text-blue-600', label: 'Facebook' , url:"https://www.facebook.com/share/1AkxfNBFKW/" },
