@@ -1,4 +1,4 @@
-export const downloadVCard = (customer: { name: string; phone: string; email: string; title: string }) => {
+export const downloadVCard = (customer: { name: string; phone: string; email: string; title: string, address?:string }) => {
   // iOS needs the 'N' property (Name) separated by semicolons: Last;First;Middle;Prefix;Suffix
   // Since we have a full string, we'll put the whole name in the 'First' slot for simplicity
   const nameParts = customer.name.split(" ");
@@ -15,6 +15,7 @@ export const downloadVCard = (customer: { name: string; phone: string; email: st
     `ORG:${customer.title}`,
     `TEL;TYPE=CELL:${customer.phone}`,
     `EMAIL;TYPE=INTERNET:${customer.email}`,
+    `ADR;TYPE=WORK:;;${customer?.address || ''}`,
     "END:VCARD"
   ].join("\r\n");
 

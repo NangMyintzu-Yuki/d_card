@@ -27,7 +27,8 @@ export default function DigitalCard(props: { params: Params }) {
         name: "Zwe Aung",
         title: "Founder & CEO of NOVA Education Services",
         email: "zweaung.nova.edu@gmail.com",
-        phone: "09794363231"
+        phone: "09794363231",
+        address: "No.404 B, Tayza Street, 35 Ward, North Dagon."
     };
 
     const handleSaveContact = () => {
