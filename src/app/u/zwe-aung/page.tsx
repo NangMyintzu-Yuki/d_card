@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Phone, Mail, ChevronRight, Facebook, Instagram, Send, LinkedinIcon, Briefcase, Youtube, Link, ExternalLink, Music2 } from 'lucide-react';
 import Profile from '../../../../public/images/zwe_aung.jpg'
 import { downloadVCard } from '@/app/utils/vcard';
@@ -7,7 +7,16 @@ import Image from 'next/image';
 
 type Params = Promise<{ slug: string }>;
 export default function DigitalCard(props: { params: Params }) {
+    const [isScrolled, setIsScrolled] = useState(false);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            // 60px ထက်ပို scroll ဆင်းရင် header ကို ကျုံ့လိုက်မယ်
+            setIsScrolled(window.scrollY > 50);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     const socialLinks = [
         { platform: 'Facebook', color: 'text-blue-600', label: 'Facebook', url: "https://www.facebook.com/share/1AkxfNBFKW/" },
         { platform: 'Viber', color: 'text-indigo-400', label: 'Viber', url: "viber://add?number=09979052919" },
@@ -37,34 +46,31 @@ export default function DigitalCard(props: { params: Params }) {
     return (
         <section className="min-h-screen bg-[#f8fafc] flex justify-center">
             <div className="w-full max-w-[500px] bg-white flex flex-col min-h-screen shadow-2xl">
-
-                <div className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-100 p-4 flex items-center justify-between">
+                <div className={`sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-100 p-4 flex items-center justify-between transition-all duration-300 ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}`}>
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-400 to-rose-500 p-0.5">
+                        <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-orange-400 to-rose-500 p-0.5">
                             <div className="relative w-full h-full">
-                                <Image
-                                    src={Profile}
-                                    alt="Profile"
-                                    fill
-                                    className="rounded-full object-cover border-2 border-white"
-                                />
+                                <Image src={Profile} alt="Profile" fill className="rounded-full object-cover border-2 border-white" />
                             </div>
                         </div>
-                        <h2 className="text-sm font-bold text-gray-800 tracking-tight">
-                            Zwe Aung
-                        </h2>
+                        <h2 className="text-lg font-bold text-gray-800 tracking-tight">Zwe Aung</h2>
                     </div>
-                    <a
-                        href="https://www.facebook.com/share/1AkxfNBFKW/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-gray-900 text-white text-xs px-4 py-2 rounded-full font-bold hover:bg-gray-800 transition-all inline-block"
-                    >
-                        Follow
-                    </a>
+                    <a href="https://www.facebook.com/share/1AkxfNBFKW/" className="bg-gray-900 text-white text-xs px-4 py-2 rounded-full font-bold">Follow</a>
                 </div>
 
-                <div className="px-6 py-8 bg-gradient-to-b from-gray-50 to-white">
+                    <div className={`transition-all text-center flex flex-col justify-center items-center duration-700 ease-in-out ${isScrolled ? "scale-50 opacity-0 h-0" : "scale-100 opacity-100 h-auto"}`}>
+                        <div className="w-40 h-40 rounded-full bg-gradient-to-tr from-orange-400 to-rose-500 p-1 shadow-2xl mb-6">
+                            <div className="relative w-full h-full">
+                                <Image src={Profile} alt="Profile" fill className="rounded-full object-cover border-4 border-white" priority />
+                            </div>
+                        </div>
+                        <h2 className="text-2xl font-bold text-gray-800 tracking-tight uppercase">Zwe Aung</h2>
+                        <p className="text-sm font-bold text-black/40 tracking-tight mb-8">Founder & CEO of NOVA Education Services</p>
+
+                    </div>
+
+
+                <div className={`px-6 py-8 bg-gradient-to-b from-gray-50 to-white ${isScrolled ? 'mt-20' : 'mt-4'}`}>
                     <h1 className="text-3xl font-extrabold text-gray-900 leading-tight">
                         Let's build something <span className="text-orange-500">incredible</span> together.
                     </h1>
