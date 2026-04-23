@@ -15,7 +15,7 @@ const myData = {
     bio: "Kids World Education (Founder)",
     corporateLinks: [],
     socialLinks: [
-        { platform: "Viber", url: "viber://add?number='09777704428" },
+        { platform: "Viber", url: "viber://add?number='959777704428" },
         { platform: "Facebook", url: "https://www.facebook.com/share/1DaW1EFmdd" },
         {platform:"Company" ,url:"http://kidsworldeducation.net"},
         { platform: "TikTok", url: 'https://www.tiktok.com/@kids.world.educat8?_r=1&_t=ZS-95lzDfQYuGO' },
