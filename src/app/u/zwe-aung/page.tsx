@@ -4,7 +4,7 @@ import Template7 from '@/components/templates/Template7';
 
 const myLinks = [
     { platform: 'Facebook', url: "https://www.facebook.com/share/1AkxfNBFKW/" },
-    { platform: 'Viber', url: "viber://add?number=95979052919" },
+    { platform: 'Viber', url: "viber://add?number=%2B959979052919" },
     { platform: 'Telegram',  url: "https://t.me/zweaung_nova_edu" },
 ];
 
