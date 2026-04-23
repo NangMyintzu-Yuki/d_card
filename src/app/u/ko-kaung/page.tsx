@@ -17,7 +17,7 @@ const myData = {
     corporateLinks: [],
     socialLinks: [
 
-        { platform: "Viber", url: "viber://add?number='%2B9599403712296" },
+        { platform: "Viber", url: "viber://add?number='%2B959403712296" },
         { platform: "Facebook", url: "https://www.facebook.com/kaungmyat.shine.982" },
 
         { platform: "Telegram", url: "https://t.me/Kwee_Kaung" },
