@@ -9,7 +9,7 @@ import ProfileImg from '../../../../public/images/shweyeewin.jpg';
     
     const myLinks = [
         
-        { platform: "Viber",  url: "viber://add?number=%2B959974133003" },
+        { platform: "Viber",  url: "viber://chat?number=95974133003" },
         { platform: "Facebook",url: "https://www.facebook.com/share/1DeZXuc5U4/" },
         { platform: "Linkedin", url: "https://www.linkedin.com/in/shwe-yee-win-767aaa160" },
         { platform: "Telegram",url: "https://t.me/+959974133003" },
