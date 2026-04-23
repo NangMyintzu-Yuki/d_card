@@ -91,7 +91,11 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
                     {getSocialIcon(link.platform)}
                   </div>
                   <span className="ml-4 text-gray-800 font-semibold capitalize">{link.platform}</span>
-                  <span className="ml-auto text-xs text-gray-400 font-medium">Follow</span>
+                  <span className="ml-auto text-xs text-gray-400 font-medium">
+                    {
+                      link.platform =="Viber" ? "Send Message" : "Follow"
+                    }
+                    </span>
                 </a>
               ))}
             </div>
