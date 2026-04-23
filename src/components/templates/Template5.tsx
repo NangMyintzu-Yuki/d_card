@@ -99,7 +99,8 @@ const Template5 = ({ data }: { data: DigitalCardProps }) => {
                 <a 
                   key={idx} 
                   href={link.url} 
-                  target="_blank"
+                  target="_self" // Deep links often work better with _self on mobile
+  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-black transition-colors transform hover:scale-110 transition-transform"
                 >
                   {getSocialIcon(link.platform)}
