@@ -41,7 +41,7 @@ const Template5 = ({ data }: { data: DigitalCardProps }) => {
             fill
             className="object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 ease-in-out"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-8">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-6">
             <h1 className="text-white text-4xl font-serif italic tracking-tight leading-none">
               {data?.name}
             </h1>
