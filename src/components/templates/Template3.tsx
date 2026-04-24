@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {  Phone, Mail, ArrowRight } from "lucide-react";
+import { Phone, Mail, ArrowRight } from "lucide-react";
 import { downloadVCard } from "@/app/utils/vcard";
 import { getSocialIcon } from "@/app/utils/social";
 
@@ -11,11 +11,11 @@ interface DigitalCardProps {
   name: string;
   title: string;
   company?: string;
-  profileImage: any; 
+  profileImage: any;
   email: string;
   phone: string;
   bio?: string;
-  address?:string;
+  address?: string;
   corporateLinks: { title: string; icon: React.ReactNode; url: string }[];
   socialLinks: { platform: string; url: string }[];
 }
@@ -29,11 +29,15 @@ export default function Template3({ data }: { data: DigitalCardProps }) {
       address: data.address,
     });
   };
-
+  const handleWeChatClick = (id: string) => {
+    navigator.clipboard.writeText(id); // ID ကို copy ကူးမယ်
+    alert("WeChat ID copied: " + id + ". Opening WeChat, please search for it.");
+    window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
+  };
   return (
     <div className="min-h-screen bg-[#0f172a] flex justify-center items-start sm:py-10">
       <div className="w-full max-w-[450px] bg-[#1e293b] flex flex-col sm:rounded-[2rem] shadow-2xl overflow-hidden border border-slate-700">
-        
+
         {/* Header/Cover */}
         <div className="relative h-40 bg-slate-800">
           <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
@@ -88,15 +92,24 @@ export default function Template3({ data }: { data: DigitalCardProps }) {
           )}
 
           <div className="flex justify-center gap-6 pt-4">
-            {data.socialLinks.map((social, i) => (
-              <a key={i} href={social.url} target="_blank" className="text-slate-500 hover:text-amber-500 transition-colors">
-                <span className="bg-[#64758A] hover:text-amber-500">
-                  {getSocialIcon(social.platform)}
-                </span>
-                 
+            {data.socialLinks.map((social, i) => {
+              if (social.platform.toLowerCase() === "wechat") {
+                return (<a key={i} onClick={() => handleWeChatClick(social.url)} href={social.url} target="_blank" className="text-slate-500 hover:text-amber-500 transition-colors">
+                  <span className="bg-[#64758A] hover:text-amber-500">
+                    {getSocialIcon(social.platform)}
+                  </span>
+                </a>)
+              }
+              return (
+                <a key={i} href={social.url} target="_blank" className="text-slate-500 hover:text-amber-500 transition-colors">
+                  <span className="bg-[#64758A] hover:text-amber-500">
+                    {getSocialIcon(social.platform)}
+                  </span>
+                </a>
+              )
+            }
 
-              </a>
-            ))}
+            )}
           </div>
         </div>
 

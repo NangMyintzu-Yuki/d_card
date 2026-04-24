@@ -18,6 +18,11 @@ interface DigitalCardProps {
     socialLinks: { platform: string; url: string }[];
     linkedinUrl?: string;
 }
+const handleWeChatClick = (id: string) => {
+    navigator.clipboard.writeText(id); // ID ကို copy ကူးမယ်
+    alert("WeChat ID copied: " + id + ". Opening WeChat, please search for it."); 
+    window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
+};
 // ၂။ Reusable Component
 export default function Template7({ data }: { data: DigitalCardProps }) {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -102,8 +107,21 @@ export default function Template7({ data }: { data: DigitalCardProps }) {
                     <div>
                         <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-4">Social Network</h3>
                         <div className="space-y-3">
-                            {data.socialLinks.map((link, index) => (
-                                <a key={index} href={link.url} target="_blank" rel="noopener noreferrer"
+                            {data.socialLinks.map((link, index) => {
+                                  if (link.platform.toLowerCase() === "wechat") {
+                                return (<a key={index} href={link.url} onClick={()=>handleWeChatClick(link.url)} target="_blank" rel="noopener noreferrer"
+                                    className="flex items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-md hover:-translate-y-0.5 transition-all">
+                                    <span className="text-[#64758A] hover:text-amber-500">
+                                       {getSocialIcon(link.platform)}
+                                    </span>
+                                    <div className="ml-4">
+                                        <h4 className="text-sm font-bold text-gray-800">{link.platform}</h4>
+                                    </div>
+                                    <ExternalLink size={20} className="ml-auto text-gray-300" />
+                                </a>)  
+                                }
+                                return(
+<a key={index} href={link.url} target="_blank" rel="noopener noreferrer"
                                     className="flex items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-md hover:-translate-y-0.5 transition-all">
                                     <span className="text-[#64758A] hover:text-amber-500">
                                        {getSocialIcon(link.platform)}
@@ -113,7 +131,9 @@ export default function Template7({ data }: { data: DigitalCardProps }) {
                                     </div>
                                     <ExternalLink size={20} className="ml-auto text-gray-300" />
                                 </a>
-                            ))}
+                                )
+                            }
+                                )}
                         </div>
                     </div>
                 </div>

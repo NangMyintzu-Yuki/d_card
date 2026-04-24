@@ -27,7 +27,11 @@ const handleSaveContact = () => {
           address: data.address,
         });
       };
-    
+    const handleWeChatClick = (id: string) => {
+    navigator.clipboard.writeText(id); // ID ကို copy ကူးမယ်
+    alert("WeChat ID copied: " + id + ". Opening WeChat, please search for it."); 
+    window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
+};
   return (
   <div className="min-h-screen bg-gray-100 flex justify-center sm:py-10 sm:px-4">
       <div className="w-full max-w-[400px] bg-white sm:rounded-[2.5rem] shadow-2xl overflow-hidden sm:border-[8px] sm:border-[#1a2332] flex flex-col">
@@ -35,16 +39,30 @@ const handleSaveContact = () => {
         {/* Navy Header Section */}
         <div className="bg-[#0a1128] p-8 pb-20 relative">
           <div className="flex items-center justify-between gap-2 mb-8">
-            {data.socialLinks?.map((link, idx) => (
-              <a 
+            {data.socialLinks?.map((link, idx) => {
+              if (link.platform.toLowerCase() === "wechat") {
+              return (
+<a 
+                key={idx} 
+                href={link.url} onClick={()=>handleWeChatClick(link.url)}
+                target="_blank" 
+                className="text-[#d4af37] hover:text-[#b38f2d] transition-colors"
+              >
+                {getSocialIcon(link.platform)}
+              </a>
+              )
+              }
+              return (<a 
                 key={idx} 
                 href={link.url} 
                 target="_blank" 
                 className="text-[#d4af37] hover:text-[#b38f2d] transition-colors"
               >
                 {getSocialIcon(link.platform)}
-              </a>
-            ))}
+              </a>)
+            }
+
+              )}
           </div>
 
           <div className="text-white">

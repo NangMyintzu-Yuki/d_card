@@ -29,6 +29,11 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
               address: data.address,
             });
           };
+          const handleWeChatClick = (id: string) => {
+    navigator.clipboard.writeText(id); // ID ကို copy ကူးမယ်
+    alert("WeChat ID copied: " + id + ". Opening WeChat, please search for it."); 
+    window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
+};
           const facebookLink = data.socialLinks?.find(link => link.platform.toLowerCase() == 'facebook')?.url;
   return (
     <div className="min-h-screen bg-slate-50 flex justify-center items-start sm:py-10">
@@ -84,8 +89,10 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
           <div>
             <h2 className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-4">Social Ecosystem</h2>
             <div className="space-y-3">
-              {data.socialLinks?.map((link, idx) => (
-                <a key={idx} href={link.url} target="_blank"
+              {data.socialLinks?.map((link, idx) =>{
+                if (link.platform.toLowerCase() === "wechat") {
+                return (
+  <a key={idx} href={link.url} target="_blank" onClick={()=>handleWeChatClick(link.url)}
                   className="flex items-center p-4 rounded-2xl hover:bg-gray-50 border border-gray-100 transition-all shadow-sm hover:shadow-md">
                   <div className={`w-10 h-10 ${getPlatformColor(link.platform)} rounded-xl flex items-center justify-center text-white shadow-lg shadow-gray-200`}>
                     {getSocialIcon(link.platform)}
@@ -97,7 +104,22 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
                     }
                     </span>
                 </a>
-              ))}
+                )
+                }
+                return (  <a key={idx} href={link.url} target="_blank"
+                  className="flex items-center p-4 rounded-2xl hover:bg-gray-50 border border-gray-100 transition-all shadow-sm hover:shadow-md">
+                  <div className={`w-10 h-10 ${getPlatformColor(link.platform)} rounded-xl flex items-center justify-center text-white shadow-lg shadow-gray-200`}>
+                    {getSocialIcon(link.platform)}
+                  </div>
+                  <span className="ml-4 text-gray-800 font-semibold capitalize">{link.platform}</span>
+                  <span className="ml-auto text-xs text-gray-400 font-medium">
+                    {
+                      link.platform =="Viber" ? "Send Message" : "Follow"
+                    }
+                    </span>
+                </a>)
+              }
+               )}
             </div>
           </div>
 

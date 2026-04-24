@@ -22,7 +22,6 @@ const myData = {
         { platform: "Telegram", url: "https://t.me/Kharann" },
 
         { platform: "TikTok", url: 'https://www.tiktok.com/@wai.yan.htoo.aung0?_r=1&_t=ZS-95lyicngigu' },
-        { platform: "WeChat", url: 'weixin://dl/chat?kaungmyatthu93' },
     ],
     linkedinLink: "",
 };

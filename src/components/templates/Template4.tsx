@@ -27,6 +27,11 @@ const Template4 = ({ data }: { data: DigitalCardProps }) => {
               address: data.address,
             });
           };
+          const handleWeChatClick = (id: string) => {
+    navigator.clipboard.writeText(id); // ID ကို copy ကူးမယ်
+    alert("WeChat ID copied: " + id + ". Opening WeChat, please search for it."); 
+    window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
+};
   return (
    <div className="min-h-screen bg-[#121212] flex justify-center items-center py-6 px-4">
       <div className="w-full max-w-[420px] bg-[#1e1e1e] rounded-[3rem] overflow-hidden shadow-2xl border border-white/10">
@@ -91,12 +96,22 @@ const Template4 = ({ data }: { data: DigitalCardProps }) => {
               Connect with me
             </h2>
             <div className="flex justify-around items-center bg-white/5 p-4 rounded-3xl border border-white/5">
-              {data.socialLinks.map((link, idx) => (
-                <a key={idx} href={link.url} target="_blank"
+              {data.socialLinks.map((link, idx) => {
+                if (link.platform.toLowerCase() === "wechat") {
+                return (
+<a key={idx} href={link.url} target="_blank" onClick={()=>handleWeChatClick(link.url)}
                   className="text-gray-400 hover:text-white transition-colors p-2">
                   {getSocialIcon(link.platform)}
                 </a>
-              ))}
+                )
+                }
+                return (<a key={idx} href={link.url} target="_blank"
+                  className="text-gray-400 hover:text-white transition-colors p-2">
+                  {getSocialIcon(link.platform)}
+                </a>)
+              }
+                
+              )}
             </div>
           </div>
         )}

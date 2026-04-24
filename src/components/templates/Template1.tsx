@@ -55,7 +55,11 @@ const Template1 = ({ data }: { data: DigitalCardProps }) => {
       address: data.address,
     });
   };
-
+const handleWeChatClick = (id: string) => {
+    navigator.clipboard.writeText(id); // ID ကို copy ကူးမယ်
+    alert("WeChat ID copied: " + id + ". Opening WeChat, please search for it."); 
+    window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
+};
   return (
     <div className="min-h-screen bg-[#fcfaf9] flex justify-center items-start sm:py-10 px-0 sm:px-4 text-slate-900">
       <div className="w-full max-w-[450px] bg-white flex flex-col min-h-screen sm:min-h-0 sm:rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.03)] overflow-hidden">
@@ -134,11 +138,18 @@ const Template1 = ({ data }: { data: DigitalCardProps }) => {
         {/* Footer Socials */}
         {data.socialLinks && data.socialLinks.length > 0 && (
           <div className="p-8 mt-auto flex justify-center gap-8 border-t border-gray-50 bg-white">
-            {data.socialLinks.map((social, idx) => (
-              <a key={idx} href={social.url} target="_blank" className="text-gray-300 hover:text-[#b5836d] transition-colors">
+            {data.socialLinks.map((social, idx) => {
+              if (social.platform.toLowerCase() === "wechat") {
+                return (<a key={idx} onClick={()=>handleWeChatClick(social.url)} href={social.url} target="_blank" className="text-gray-300 hover:text-[#b5836d] transition-colors">
                 {getSocialIcon(social.platform)}
-              </a>
-            ))}
+              </a>)
+              }
+              return (<a key={idx} href={social.url} target="_blank" className="text-gray-300 hover:text-[#b5836d] transition-colors">
+                {getSocialIcon(social.platform)}
+              </a>)
+            }
+              
+            )}
           </div>
         )}
       </div>
