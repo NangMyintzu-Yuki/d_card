@@ -23,7 +23,7 @@ const myData = {
         { platform: "Telegram", url: "https://t.me/Kwee_Kaung" },
 
         { platform: "TikTok", url: 'https://www.tiktok.com/@ck90934?_r=1&_t=ZS-95llhhbOuBN' },
-        { platform: "WeChat", url: 'weixin://dl/chat?kaungmyatthu93' },
+        { platform: "WeChat", url: 'kaungmyatthu93' },
     ],
     linkedinLink: "",
 };
