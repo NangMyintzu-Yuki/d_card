@@ -120,7 +120,7 @@ const Template1 = ({ data }: { data: DigitalCardProps }) => {
 
           {/* Full Bio Quote */}
           <div className="mt-8 p-8 bg-[#fcf7f5] rounded-[2rem] border-t border-white shadow-inner">
-            <p className="text-[#b5836d] font-serif italic text-lg text-center">
+            <p className="text-[#b5836d] font-serif italic text-lg text-center whitespace-pre-line">
               {data.bio}
             </p>
           </div>

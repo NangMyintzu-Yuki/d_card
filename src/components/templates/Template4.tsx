@@ -53,7 +53,7 @@ const Template4 = ({ data }: { data: DigitalCardProps }) => {
             {data.title}
           </p>
           {data.bio && (
-            <p className="text-gray-400 text-xs mt-2 font-light leading-relaxed px-4">
+            <p className="text-gray-400 text-xs mt-2 font-light leading-relaxed px-4 whitespace-pre-line">
               {data.bio}
             </p>
           )}

@@ -104,9 +104,9 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
           {/* Bio & CTA Section */}
           <div className="bg-slate-900 rounded-[2rem] p-8 text-white">
             <h3 className="text-xl font-bold mb-2">My Work</h3>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              {data.bio}
-            </p>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 whitespace-pre-line">
+  {data.bio}
+</p>
             <button 
               onClick={handleSaveContact}
               className="w-full py-3 bg-white text-slate-900 rounded-xl font-bold transition-all duration-300 active:scale-95 text-lg cursor-pointer"

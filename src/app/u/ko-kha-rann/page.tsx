@@ -12,7 +12,7 @@ const myData = {
     company: "https://www.facebook.com/share/1DeZXuc5U4/",
     profileImage: ProfileImg,
     address: "ရှေ့ဆောင် Plastic အမှတ်(၂၅/၄) အိမ်မြင့်စံရွာ၊ တံတားဦး၊ မန္တလေးမြို့",
-    bio: "မိတ်ဆွေသစ်ဖြစ်ရတာ ဝမ်းသာပါတယ်။ အချိန်မရွေး ဆက်သွယ်လိုက်ပါ!. Let's connect and share some great ideas!",
+    bio: "မိတ်ဆွေသစ်ဖြစ်ရတာ ဝမ်းသာပါတယ်။ အချိန်မရွေး ဆက်သွယ်လိုက်ပါ!\n• Let's connect and share some great ideas!",
     corporateLinks: [],
     socialLinks: [
 

@@ -51,7 +51,7 @@ const handleSaveContact = () => {
             <h1 className="text-2xl font-semibold leading-tight">
               {data.name}
             </h1>
-            <p className="text-[#d4af37] font-medium mt-1">{data.title}</p>
+            <p className="text-[#d4af37] font-medium mt-1 whitespace-pre-line">{data.title}</p>
             <p className="text-white/80 font-light text-sm">{data.company}</p>
           </div>
 
@@ -75,7 +75,7 @@ const handleSaveContact = () => {
 
         {/* Bio Section */}
         <div className="pt-20 px-8 pb-8">
-          <p className="text-[#1a2332] text-sm font-medium leading-relaxed max-w-[70%] line-clamp-3">
+          <p className="text-[#1a2332] text-sm font-medium leading-relaxed max-w-[70%] line-clamp-3 whitespace-pre-line">
             {data.bio}
           </p>
         </div>

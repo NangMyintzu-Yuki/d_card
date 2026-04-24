@@ -78,7 +78,7 @@ export default function Template7({ data }: { data: DigitalCardProps }) {
                         Let's build something <span className="text-orange-500">incredible</span> together.
                     </h1>
                     {data.bio && (
-                        <p className="mt-4 text-gray-600 leading-relaxed text-justify">
+                        <p className="mt-4 text-gray-600 leading-relaxed text-justify whitespace-pre-line">
                             {data.bio}
                         </p>
                     )}

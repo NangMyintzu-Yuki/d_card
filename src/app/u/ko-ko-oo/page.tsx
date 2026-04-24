@@ -12,7 +12,7 @@ const myData = {
     company: "Kids World Education",
     profileImage: ProfileImg,
     address: "Hlaing thar yar T/P",
-    bio: "Kids World Education ဟာ 👉 ကလေးများအတွက် အခြေခံပညာရေးကို ပျော်ရွှင်စရာနည်းလမ်းတွေနဲ့ သင်ကြားပေးဖို ရည်ရွယ်ထားတဲ့ educational platform တစ်ခု ဖြစ်ပါတယ်။",
+    bio: "Kids World Education ဟာ \n 👉 ကလေးများအတွက် အခြေခံပညာရေးကို ပျော်ရွှင်စရာနည်းလမ်းတွေနဲ့ သင်ကြားပေးဖို ရည်ရွယ်ထားတဲ့ educational platform တစ်ခု ဖြစ်ပါတယ်။ \n \n Mission (ရည်မှန်းချက်) \n  ကလေးတွေကို fun + easy learning နဲ့ သင်ပေးခြင်း \n Early childhood development ကို ထောက်ပံ့ခြင်း \n Language, creativity, thinking skills တိုးတက်စေခြင်း",
     corporateLinks: [],
     socialLinks: [
         { platform: "Viber", url: "viber://chat?number=959777704428" },

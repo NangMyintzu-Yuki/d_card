@@ -83,7 +83,7 @@ export default function Template3({ data }: { data: DigitalCardProps }) {
 
           {data.bio && (
             <section className="bg-slate-800/80 p-6 rounded-2xl border-l-4 border-amber-500">
-              <p className="text-slate-300 text-sm leading-relaxed italic">"{data.bio}"</p>
+              <p className="text-slate-300 text-sm leading-relaxed italic whitespace-pre-line">"{data.bio}"</p>
             </section>
           )}
 

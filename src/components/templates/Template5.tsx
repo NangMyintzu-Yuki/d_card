@@ -53,7 +53,7 @@ const Template5 = ({ data }: { data: DigitalCardProps }) => {
 
         {/* BIO SECTION */}
         <div className="p-8">
-          <p className="text-gray-500 text-sm leading-relaxed font-light border-l-2 border-gray-200 pl-4">
+          <p className="text-gray-500 text-sm leading-relaxed font-light border-l-2 border-gray-200 pl-4 whitespace-pre-line">
             {data?.bio ? (data?.bio.length > 500 ? `${data.bio.substring(0, 500)}...` : data.bio) : "Creative professional focused on excellence and design."}
           </p>
         </div>
