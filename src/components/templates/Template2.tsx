@@ -33,7 +33,7 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
   };
   const handleWeChatClick = (id: string) => {
     navigator.clipboard.writeText(id); // ID ကို copy ကူးမယ်
-    alert("WeChat ID copied: " + id + ". Opening WeChat, please search for it.");
+    alert("WeChat ID copied: " + id);
    //  window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
   };
   const facebookLink = data.socialLinks?.find(link => link.platform.toLowerCase() == 'facebook')?.url;
