@@ -4,7 +4,7 @@ import ProfileImg from '../../../../public/images/dennis.jpg';
 
 
 const myData = {
-    name: "Kyi Lei Wai",
+    name: "Dennis",
     title: "Founder of Baby Elephant \n (စားသောက်ကုန်လုပ်ငန်း)\n \n",
     email: "dennissai652003@gmail.com",
     phone: "09955157037", //09773485837

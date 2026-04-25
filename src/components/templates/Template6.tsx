@@ -30,7 +30,7 @@ const handleSaveContact = () => {
     const handleWeChatClick = (id: string) => {
     navigator.clipboard.writeText(id); // ID ကို copy ကူးမယ်
     alert("WeChat ID copied: " + id + ". Opening WeChat, please search for it."); 
-    window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
+   //  window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
 };
   return (
   <div className="min-h-screen bg-gray-100 flex justify-center sm:py-10 sm:px-4">

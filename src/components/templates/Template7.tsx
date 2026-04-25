@@ -21,7 +21,7 @@ interface DigitalCardProps {
 const handleWeChatClick = (id: string) => {
     navigator.clipboard.writeText(id); // ID ကို copy ကူးမယ်
     alert("WeChat ID copied: " + id + ". Opening WeChat, please search for it."); 
-    window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
+   //  window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
 };
 // ၂။ Reusable Component
 export default function Template7({ data }: { data: DigitalCardProps }) {

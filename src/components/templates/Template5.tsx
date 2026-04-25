@@ -31,7 +31,7 @@ const Template5 = ({ data }: { data: DigitalCardProps }) => {
           const handleWeChatClick = (id: string) => {
     navigator.clipboard.writeText(id); // ID ကို copy ကူးမယ်
     alert("WeChat ID copied: " + id + ". Opening WeChat, please search for it."); 
-    window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
+    //  window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
 };
   return (
    <div className="min-h-screen bg-[#faf9f6] flex justify-center items-start sm:py-10 px-0 sm:px-4">

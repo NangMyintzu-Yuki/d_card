@@ -9,32 +9,35 @@ import GlobeIcon from "@/components/icons/GlobeIcon";
 import YoutubeIcon from "@/components/icons/YoutubeIcon";
 
 export const getSocialIcon = (platform: string) => {
-    switch (platform) {
-      case 'Facebook': return <FacebookIcon/>;
-      case 'Viber': return <ViberIcon/>;
-      case 'Telegram': return <TelegramIcon/>;
-      case 'TikTok': return <TiktokIcon/>;
-      case 'WhatsApp': return <WhatsAppIcon/>;
-      case 'Linkedin' : return <LinkedInIcon/>;
-      case "WeChat": return <WeChatIcon/>;
-      case "Company": return <GlobeIcon/>;
-      case "Youtube": return <YoutubeIcon/>;
-      // case 'instagram': return <Instagram size={20} />;
-      // case 'telegram': return <Send size={20} />;
-      // default: return <MessageCircle size={20} />;
-    }
-  };
+  // Case insensitive ဖြစ်အောင် အကုန်လုံးကို lowercase ပြောင်းပြီး စစ်ပါမယ်
+  const p = platform.toLowerCase();
+  
+  switch (p) {
+    case 'facebook': return <FacebookIcon />;
+    case 'viber': return <ViberIcon />;
+    case 'telegram': return <TelegramIcon />;
+    case 'tiktok': return <TiktokIcon />;
+    case 'whatsapp': return <WhatsAppIcon />;
+    case 'linkedin': return <LinkedInIcon />;
+    case 'wechat': return <WeChatIcon />;
+    case 'company': return <GlobeIcon />;
+    case 'youtube': return <YoutubeIcon />;
+    default: return null;
+  }
+};
 
-
-  export const getPlatformColor = (platform: string) => {
-    switch (platform.toLowerCase()) {
-      case 'Facebook': return 'bg-[#1877F2]';
-      case 'Viber': return 'bg-indigo-600';
-      case 'Instagram': return 'bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600';
-      case 'Tiktok': return 'bg-black';
-      case 'Telegram': return 'bg-[#5865F2]';
-      case 'WeChat': return 'bg-[#5865F2]';
-      case 'WhatsApp': return 'bg-[#5865F2]';
-      default: return 'bg-slate-600';
-    }
-  };
+export const getPlatformColor = (platform: string) => {
+  const p = platform.toLowerCase();
+  
+  switch (p) {
+    case 'facebook': return 'bg-[#1877F2]';
+    case 'viber': return 'bg-[#7360F2]'; // Viber color
+    case 'instagram': return 'bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600';
+    case 'tiktok': return 'bg-black';
+    case 'telegram': return 'bg-[#0088cc]';
+    case 'wechat': return 'bg-[#07C160]'; // WeChat green
+    case 'whatsapp': return 'bg-[#25D366]'; // WhatsApp green
+    case 'youtube': return 'bg-[#FF0000]';
+    default: return 'bg-slate-600';
+  }
+};
