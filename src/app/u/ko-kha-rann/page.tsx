@@ -4,10 +4,10 @@ import Template5 from '@/components/templates/Template5';
 
 
 const myData = {
-    name: "ကိုအောင်ကျော်စိုး",
+    name: "ကိုခရမ်း",
     title: "",
     email: "kharannmm@gmail.com",
-    phone: "09777888254",
+    phone: "09777888254, 09444333254",
     description: "...",
     company: "https://www.facebook.com/share/1DeZXuc5U4/",
     profileImage: ProfileImg,

@@ -8,7 +8,7 @@ const myData = {
     name: "Ko Kaung Myat Thu",
     title: "",
     email: "kaungmyatthu1293@gmail.com",
-    phone: "09403712296",
+    phone: "09403712296, 09940430445",
     description: "...",
     company: "https://www.facebook.com/share/1DeZXuc5U4/",
     profileImage: ProfileImg,

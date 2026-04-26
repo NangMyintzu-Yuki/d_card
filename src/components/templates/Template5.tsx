@@ -66,20 +66,22 @@ const Template5 = ({ data }: { data: DigitalCardProps }) => {
         {/* CONTACT ACTIONS */}
         <div className="px-8 pb-10 grid grid-cols-2 gap-4">
           <a 
-            href={`tel:${data?.phone}`}
-            className="col-span-2 flex items-center justify-between p-6 bg-white border-2 border-gray-100 rounded-3xl hover:border-black transition-all group"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gray-400 rounded-full flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
-                <Phone size={18} />
-              </div>
-              <div>
-                <p className="text-sm font-bold text-gray-800">Contact me anytime</p>
-                <p className="text-xs text-gray-400 font-medium">{data?.phone}</p>
-              </div>
-            </div>
-            <ChevronRight size={18} className="text-gray-300 group-hover:text-black transition-colors" />
-          </a>
+  // ပထမဆုံးနံပါတ်ကိုပဲ tel link အဖြစ်ယူမယ်
+  href={`tel:${data?.phone.split(",")[0].trim()}`}
+  className="col-span-2 flex items-center justify-between p-6 bg-white border-2 border-gray-100 rounded-3xl hover:border-black transition-all group"
+>
+  <div className="flex items-center gap-4">
+    <div className="w-12 h-12 bg-gray-400 rounded-full flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
+      <Phone size={18} />
+    </div>
+    <div>
+      <p className="text-sm font-bold text-gray-800">Contact me anytime</p>
+      {/* နံပါတ်အားလုံးကို comma နဲ့ ဆက်ပြထားမယ် */}
+      <p className="text-xs text-gray-400 font-medium">{data?.phone}</p>
+    </div>
+  </div>
+  <ChevronRight size={18} className="text-gray-300 group-hover:text-black transition-colors" />
+</a>
 
           <a 
             href={`mailto:${data?.email}`}
