@@ -24,13 +24,9 @@ export const downloadVCard = async (customer: {
     `ORG:${customer.title}`,
   ];
   if (customer.profileImage) {
-    try {
-      const base64Photo = await getBase64Image(customer.profileImage);
-      // PHOTO;TYPE=JPEG;ENCODING=b: ပြီးရင် base64 string ကို ကပ်ထည့်ရပါမယ်
-      vcardLines.push(`PHOTO;TYPE=JPEG;ENCODING=b:${base64Photo}`);
-    } catch (error) {
-      console.error("Failed to load image for vCard", error);
-    }
+    const base64Photo = await getBase64Image(customer?.profileImage);
+const formattedPhoto = formatBase64ForVCard(base64Photo);
+vcardLines.push(`PHOTO;TYPE=JPEG;ENCODING=b:${formattedPhoto}`);
   }
 
  phoneNumbers.forEach((num, index) => {
@@ -69,4 +65,8 @@ const getBase64Image = async (url: string): Promise<string> => {
     reader.onerror = reject;
     reader.readAsDataURL(blob);
   });
+};
+const formatBase64ForVCard = (base64: string) => {
+  // စာလုံး ၇၅ လုံးတိုင်းမှာ line break တစ်ခု ထည့်ပေးရပါတယ် (vCard Standard)
+  return base64.match(/.{1,75}/g)?.join("\r\n ") || base64;
 };
