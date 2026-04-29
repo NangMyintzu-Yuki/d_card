@@ -135,7 +135,7 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
                       className="flex items-center p-4 rounded-2xl hover:bg-gray-50 border border-gray-100 transition-all shadow-sm hover:shadow-md">
                       <div className={`w-10 h-10  rounded-xl flex items-center justify-center text-white shadow-lg shadow-gray-200`}>
                         {
-                          data?.company_logo && <Image src={data.company_logo} alt={data.company || "Company"}/>
+                          data?.company_logo && <Image src={data.company_logo} alt={data.company || "Company"} className='rounded-xl' />
                         }
                       </div>
                       <span className="ml-4 text-gray-800 font-semibold capitalize">{data.company}</span>

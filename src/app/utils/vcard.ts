@@ -4,6 +4,7 @@ export const downloadVCard = (customer: {
   email: string;
   title: string;
   address?: string;
+  profileImage?:string;
 }) => {
   // iOS needs the 'N' property (Name) separated by semicolons: Last;First;Middle;Prefix;Suffix
   // Since we have a full string, we'll put the whole name in the 'First' slot for simplicity
