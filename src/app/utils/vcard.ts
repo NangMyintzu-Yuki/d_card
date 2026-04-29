@@ -4,7 +4,7 @@ export const downloadVCard = async (customer: {
   email: string;
   title: string;
   address?: string;
-  imageUrl?: string;
+  profileImage?: string;
 }) => {
   const nameParts = customer.name.split(" ");
   const firstName = nameParts[0] || "";
@@ -23,9 +23,9 @@ export const downloadVCard = async (customer: {
     `FN:${customer.name}`,
     `ORG:${customer.title}`,
   ];
-  if (customer.imageUrl) {
+  if (customer.profileImage) {
     try {
-      const base64Photo = await getBase64Image(customer.imageUrl);
+      const base64Photo = await getBase64Image(customer.profileImage);
       // PHOTO;TYPE=JPEG;ENCODING=b: ပြီးရင် base64 string ကို ကပ်ထည့်ရပါမယ်
       vcardLines.push(`PHOTO;TYPE=JPEG;ENCODING=b:${base64Photo}`);
     } catch (error) {
