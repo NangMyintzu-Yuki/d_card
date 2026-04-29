@@ -27,6 +27,7 @@ export default function Template3({ data }: { data: DigitalCardProps }) {
       email: data.email,
       phone: data.phone,
       address: data.address,
+      profileImage:data.profileImage,
     });
   };
   const handleWeChatClick = (id: string) => {
