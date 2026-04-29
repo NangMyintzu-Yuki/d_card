@@ -11,6 +11,7 @@ interface DigitalCardProps {
   name: string;
   title: string;
   company?: string;
+  company_logo?:any;
   profileImage: any;
   email: string;
   phone: string;
@@ -34,7 +35,7 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
   const handleWeChatClick = (id: string) => {
     navigator.clipboard.writeText(id); // ID ကို copy ကူးမယ်
     alert("WeChat ID copied: " + id);
-   //  window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
+    //  window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
   };
   const facebookLink = data.socialLinks?.find(link => link.platform.toLowerCase() == 'facebook')?.url;
   return (
@@ -42,7 +43,7 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
       <div className="w-full max-w-[480px] bg-white sm:rounded-[2.5rem] shadow-xl flex flex-col min-h-screen sm:min-h-[850px] overflow-hidden">
 
         {/* FIXED HEADER SECTION */}
-        <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-gray-100 p-6 flex items-center gap-4">
+        <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-gray-100 p-6 flex items-center gap-2 xs:gap-4">
           <div className="w-16 h-16 rounded-full border-2 border-indigo-500 p-0.5 flex-shrink-0">
             <Image
               src={data.profileImage}
@@ -54,7 +55,7 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
           </div>
           <div>
             <h1 className="text-lg font-bold text-gray-900 leading-none">{data.name}</h1>
-            <p className="text-indigo-600 text-xs font-semibold mt-1 uppercase tracking-wider">{data.title}</p>
+            <p className="text-indigo-600 text-[8px] font-semibold mt-1 uppercase tracking-wider whitespace-wrap xs:whitespace-nowrap whitespace-pre-line">{data.title}</p>
           </div>
           {facebookLink && (
             <a
@@ -67,17 +68,7 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
               <FacebookIcon />
             </a>
           )}
-          {data?.websiteLink && (
-            <a
-              href={data?.websiteLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-auto bg-[#1877F2]/10 p-3 rounded-full text-[#051c14] hover:bg-[#06fd5c] hover:text-white transition-all duration-300"
-              title="Follow on Facebook"
-            >
-              <GlobeIcon />
-            </a>
-          )}
+
         </div>
 
         <div className="p-6 space-y-8">
@@ -112,12 +103,12 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
                       </div>
                       <span className="ml-4 text-gray-800 font-semibold capitalize">{link.platform}</span>
                       <span className="ml-auto text-xs text-gray-400 font-medium">
-  {
-    link.platform.toLowerCase() === "viber" ? "Send Message" : 
-    link.platform.toLowerCase() === "youtube" ? "Subscribe" : 
-    link.platform.toLowerCase() === "tiktok" ? "Watch" : "Follow"
-  }
-</span>
+                        {
+                          link.platform.toLowerCase() === "viber" ? "Send Message" :
+                            link.platform.toLowerCase() === "youtube" ? "Subscribe" :
+                              link.platform.toLowerCase() === "tiktok" ? "Watch" : "Follow"
+                        }
+                      </span>
                     </a>
                   )
                 }
@@ -128,15 +119,30 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
                   </div>
                   <span className="ml-4 text-gray-800 font-semibold capitalize">{link.platform}</span>
                   <span className="ml-auto text-xs text-gray-400 font-medium">
-  {
-    link.platform.toLowerCase() === "viber" ? "Send Message" : 
-    link.platform.toLowerCase() === "youtube" ? "Subscribe" : 
-    link.platform.toLowerCase() === "tiktok" ? "Watch" : "Follow"
-  }
-</span>
+                    {
+                      link.platform.toLowerCase() === "viber" ? "Send Message" :
+                        link.platform.toLowerCase() === "youtube" ? "Subscribe" :
+                          link.platform.toLowerCase() === "tiktok" ? "Watch" : "Follow"
+                    }
+                  </span>
                 </a>)
               }
               )}
+              {
+                data?.websiteLink && 
+              <a  target="_blank" href={data.websiteLink}
+                      className="flex items-center p-4 rounded-2xl hover:bg-gray-50 border border-gray-100 transition-all shadow-sm hover:shadow-md">
+                      <div className={`w-10 h-10  rounded-xl flex items-center justify-center text-white shadow-lg shadow-gray-200`}>
+                        {
+                          data?.company_logo && <Image src={data.company_logo} alt={data.company || "Company"}/>
+                        }
+                      </div>
+                      <span className="ml-4 text-gray-800 font-semibold capitalize">{data.company}</span>
+                      <span className="ml-auto text-xs text-gray-400 font-medium">
+                        Watch
+                      </span>
+                    </a>
+              }
             </div>
           </div>
 

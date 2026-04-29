@@ -1,7 +1,7 @@
 import ProfileImg from '../../../../public/images/ko_ko_oo.jpg';
 import Template2 from '@/components/templates/Template2';
 
-
+import CompanyLogo from '../../../../public/images/ko_ko_oo_companay_logo.jpg'
 
 const myData = {
     name: "Ko Ko Oo",
@@ -11,6 +11,7 @@ const myData = {
     description: "...",
     company: "Kids World Education",
     profileImage: ProfileImg,
+    company_logo: CompanyLogo,
     address: "Hlaing thar yar T/P",
     bio: "Kids World Education ဟာ \n 👉 ကလေးများအတွက် အခြေခံပညာရေးကို ပျော်ရွှင်စရာနည်းလမ်းတွေနဲ့ သင်ကြားပေးဖို ရည်ရွယ်ထားတဲ့ educational platform တစ်ခု ဖြစ်ပါတယ်။ \n \n Mission (ရည်မှန်းချက်) \n  ကလေးတွေကို fun + easy learning နဲ့ သင်ပေးခြင်း \n Early childhood development ကို ထောက်ပံ့ခြင်း \n Language, creativity, thinking skills တိုးတက်စေခြင်း",
     corporateLinks: [],

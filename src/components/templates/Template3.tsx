@@ -54,7 +54,7 @@ export default function Template3({ data }: { data: DigitalCardProps }) {
           <p className="text-slate-400 text-sm mt-1">{data.title}</p>
           {data.company && (
             <div className="flex items-center gap-2 mt-2 text-amber-500">
-              <span className="text-xs font-bold uppercase">{data.company}</span>
+              <span className="text-xs font-bold uppercase whitespace-pre-line">{data.company}</span>
             </div>
           )}
         </div>
