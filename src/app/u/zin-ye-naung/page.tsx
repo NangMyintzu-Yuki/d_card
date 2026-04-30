@@ -23,8 +23,8 @@ const userData = {
         // { platform: "Linkedin", url: "https://www.linkedin.com/in/nangmyintzu/" },
         { platform: "TikTok", url: "https://www.tiktok.com/@dy3wt9qm8ola?_r=1&_t=ZS-95p7pfUt2W4" },
         
-        // { platform: "Viber", url: "viber://chat?number=959259599508" },
-        // { platform: "Telegram", url: "https://t.me/+959259599508" },
+        { platform: "Viber", url: "viber://chat?number=959259355858" },
+        { platform: "Telegram", url: "https://t.me/+959259355858" },
     ],
     // linkedinUrl: 'https://www.linkedin.com/in/nangmyintzu/'
 };
