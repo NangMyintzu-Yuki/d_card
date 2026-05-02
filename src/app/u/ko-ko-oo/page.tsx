@@ -24,7 +24,7 @@ const myData = {
         { platform: "Youtube", url: 'https://youtube.com/@kidsworldeducation?feature=shared' },
     ],
     linkedinLink: "",
-    websiteLink:"https://softedify.top/resource/kidsworldeduction/app_collection_qr"
+    websiteLink:"https://kidsworldeducation.net/app_collection_qr/"
 };
 export default function Page() {
     return <Template2 data={myData} />;
