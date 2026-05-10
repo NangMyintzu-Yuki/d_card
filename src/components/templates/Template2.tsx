@@ -18,9 +18,11 @@ interface DigitalCardProps {
   bio?: string;
   address?: string;
   corporateLinks: { title: string; icon: React.ReactNode; url: string }[];
-  socialLinks: { platform: string; url: string }[];
+  socialLinks: { platform: string; url: string, name?:string }[];
   linkedinUrl?: string;
   websiteLink?: string;
+  websiteName?:string;
+  personalFacebookLink?: string;
 }
 const Template2 = ({ data }: { data: DigitalCardProps }) => {
   const handleSaveContact = () => {
@@ -39,6 +41,8 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
     //  window.location.href = "weixin://"; // App ကို ဖွင့်မယ်
   };
   const facebookLink = data.socialLinks?.find(link => link.platform.toLowerCase() == 'facebook')?.url;
+
+
   return (
     <div className="min-h-screen bg-slate-50 flex justify-center items-start sm:py-10">
       <div className="w-full max-w-[480px] bg-white sm:rounded-[2.5rem] shadow-xl flex flex-col min-h-screen sm:min-h-[850px] overflow-hidden">
@@ -56,10 +60,19 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
           </div>
           <div>
             <h1 className="text-lg font-bold text-gray-900 leading-none">{data.name}</h1>
-            <p className="text-indigo-600 text-[8px] font-semibold mt-1 uppercase tracking-wider whitespace-wrap xs:whitespace-nowrap whitespace-pre-line">{data.title}</p>
+            <p className="text-indigo-600 text-[10px] font-semibold mt-1 uppercase tracking-wider whitespace-wrap xs:whitespace-nowrap whitespace-pre-line">{data.title}</p>
           </div>
-          {facebookLink && (
+          {data.personalFacebookLink ?
             <a
+              href={data.personalFacebookLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-auto bg-[#1877F2]/10 p-3 rounded-full text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all duration-300"
+              title="Follow on Facebook"
+            >
+              <FacebookIcon />
+            </a>
+            : <a
               href={facebookLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -68,7 +81,7 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
             >
               <FacebookIcon />
             </a>
-          )}
+          }
 
         </div>
 
@@ -94,15 +107,43 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
           <div>
             <h2 className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-4">Social Ecosystem</h2>
             <div className="space-y-3">
+               {
+                data?.websiteLink && 
+              <a  target="_blank" href={data.websiteLink}
+                      className="flex items-center p-4 rounded-2xl hover:bg-gray-50 border border-gray-100 transition-all shadow-sm hover:shadow-md">
+                      <div className={`w-10 h-10  rounded-xl flex items-center justify-center text-white shadow-lg shadow-gray-200`}>
+                        {
+                          data?.company_logo && <Image src={data.company_logo} alt={data.company || "Company"} className='rounded-xl' />
+                        }
+                      </div>
+                      {
+                        data?.websiteName ? <span className="ml-4 text-gray-800 font-semibold ">{data?.websiteName }</span> : <span className="ml-4 text-gray-800 font-semibold capitalize">{data.company}</span>
+                      }
+                      
+                      <span className="ml-auto text-xs text-gray-400 font-medium">
+                        Watch
+                      </span>
+                    </a>
+              }
               {data.socialLinks?.map((link, idx) => {
                 if (link.platform.toLowerCase() === "wechat") {
                   return (
                     <a key={idx} href={link.url} target="_blank" onClick={() => handleWeChatClick(link.url)}
                       className="flex items-center p-4 rounded-2xl hover:bg-gray-50 border border-gray-100 transition-all shadow-sm hover:shadow-md">
                       <div className={`w-10 h-10 ${getPlatformColor(link.platform)} rounded-xl flex items-center justify-center text-white shadow-lg shadow-gray-200`}>
-                        {getSocialIcon(link.platform)}
+                        {getSocialIcon(link.platform)} 
                       </div>
-                      <span className="ml-4 text-gray-800 font-semibold capitalize">{link.platform}</span>
+                      {
+                        link?.name ?
+                         <span className="ml-4 text-gray-800 font-semibold capitalize">
+                        {link?.name }
+                        </span>
+                        :
+                         <span className="ml-4 text-gray-800 font-semibold capitalize">
+                        {link.platform}
+                        </span>
+                      }
+                     
                       <span className="ml-auto text-xs text-gray-400 font-medium">
                         {
                           link.platform.toLowerCase() === "viber" ? "Send Message" :
@@ -118,7 +159,16 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
                   <div className={`w-10 h-10 ${getPlatformColor(link.platform)} rounded-xl flex items-center justify-center text-white shadow-lg shadow-gray-200`}>
                     {getSocialIcon(link.platform)}
                   </div>
-                  <span className="ml-4 text-gray-800 font-semibold capitalize">{link.platform}</span>
+                   {
+                        link?.name ?
+                         <span className="ml-4 text-gray-800 font-semibold ">
+                        {link?.name }
+                        </span>
+                        :
+                         <span className="ml-4 text-gray-800 font-semibold capitalize">
+                        {link.platform}
+                        </span>
+                      }
                   <span className="ml-auto text-xs text-gray-400 font-medium">
                     {
                       link.platform.toLowerCase() === "viber" ? "Send Message" :
@@ -129,21 +179,7 @@ const Template2 = ({ data }: { data: DigitalCardProps }) => {
                 </a>)
               }
               )}
-              {
-                data?.websiteLink && 
-              <a  target="_blank" href={data.websiteLink}
-                      className="flex items-center p-4 rounded-2xl hover:bg-gray-50 border border-gray-100 transition-all shadow-sm hover:shadow-md">
-                      <div className={`w-10 h-10  rounded-xl flex items-center justify-center text-white shadow-lg shadow-gray-200`}>
-                        {
-                          data?.company_logo && <Image src={data.company_logo} alt={data.company || "Company"} className='rounded-xl' />
-                        }
-                      </div>
-                      <span className="ml-4 text-gray-800 font-semibold capitalize">{data.company}</span>
-                      <span className="ml-auto text-xs text-gray-400 font-medium">
-                        Watch
-                      </span>
-                    </a>
-              }
+             
             </div>
           </div>
 
