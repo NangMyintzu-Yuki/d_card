@@ -1,7 +1,7 @@
 import ProfileImg from '../../../../public/images/ko_ko_oo.jpg';
 import Template2 from '@/components/templates/Template2';
 
-import CompanyLogo from '../../../../public/images/ko_ko_oo_companay_logo.jpg'
+import CompanyLogo from '../../../../public/images/kidworld.jpg';
 import { platform } from 'os';
 
 const myData = {
@@ -21,13 +21,14 @@ const myData = {
         { platform: "Facebook", url:"https://www.facebook.com/share/1UX2C3kCmV/", name: "Kids World Entertainment"},
         { platform: "TikTok", url: 'https://www.tiktok.com/@kids.world.entert1?_r=1&_t=ZS-964Um4DdHmO', name: "Kids World Education" },
         { platform: "Youtube", url: 'https://youtube.com/@kidsworldeducation?feature=shared', name: "Kids World Education" },
+        { platform: "Youtube", url: 'https://www.youtube.com/@KidsWorldEntertainment-y7g', name: "Kids World Entertainment" },
         // { platform: "Viber", url: "viber://chat?number=959777710428" },
         // { platform: "Facebook", url: "https://www.facebook.com/share/1DaW1EFmdd" },
         {platform:"Company" ,url:"https://kidsworldeducation.net/app-home/",name:"kidsworldeducation.net"},
     ],
     linkedinLink: "",
     websiteLink:"https://kidsworldeducation.net/app_collection_qr/",
-    websiteName:"E-learning for kids",
+    websiteName:"Kidsworld Learn & Play",
     personalFacebookLink: "https://www.facebook.com/share/1EdfdTgVEB/"
 };
 export default function Page() {
